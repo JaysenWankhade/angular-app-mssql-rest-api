@@ -1,0 +1,33 @@
+<div>
+    <div class="row">
+        <h2>Students List</h2>
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{ student.id }}</td>
+                <td>{{ student.name }}</td>
+                <td>
+                    <button (click)="updateEmployee(student.id)" class="btn btn-primary">
+            Update
+          </button>
+                    <button (click)="deleteEmployee(student.id)" class="btn btn-danger" style="margin-left: 10px">
+            Delete
+          </button>
+                    <button (click)="employeeDetails(student.id)" class="btn btn-primary" style="margin-left: 10px">
+            View
+          </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-create-student></app-create-student>
+<router-outlet></router-outlet>
